@@ -1,0 +1,68 @@
+{
+  "design_name": "drying_operating_envelope_v1",
+  "seed": 20260911,
+  "method": "latin_hypercube",
+  "samples": 128,
+  "splits": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "parameters": {
+    "geometry.length_m": {
+      "min": 0.2,
+      "max": 0.3,
+      "scale": "linear"
+    },
+    "geometry.initial_radius_m": {
+      "min": 0.015,
+      "max": 0.025,
+      "scale": "linear"
+    },
+    "initial.temperature_K": {
+      "min": 288.15,
+      "max": 308.15,
+      "scale": "linear"
+    },
+    "initial.moisture_kg_per_kg_dry": {
+      "min": 1.2,
+      "max": 3.0,
+      "scale": "linear"
+    },
+    "air.temperature_K": {
+      "min": 313.15,
+      "max": 353.15,
+      "scale": "linear"
+    },
+    "air.relative_humidity": {
+      "min": 0.05,
+      "max": 0.5,
+      "scale": "linear"
+    },
+    "air.velocity_m_per_s": {
+      "min": 0.5,
+      "max": 3.0,
+      "scale": "linear"
+    },
+    "material.thermal_conductivity_W_per_mK": {
+      "min": 0.2,
+      "max": 0.6,
+      "scale": "linear"
+    },
+    "material.moisture_diffusivity_m2_per_s": {
+      "min": 1E-10,
+      "max": 1E-08,
+      "scale": "log10"
+    },
+    "transfer.heat_transfer_W_per_m2K": {
+      "min": 10.0,
+      "max": 60.0,
+      "scale": "linear"
+    },
+    "transfer.mass_flux_coefficient_kg_per_m2_s_per_moisture": {
+      "min": 1E-05,
+      "max": 0.0002,
+      "scale": "log10"
+    }
+  }
+}

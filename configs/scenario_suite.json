@@ -1,0 +1,16 @@
+{
+  "suite_name": "fixed_boundary_and_regression_cases_v1",
+  "scenarios": [
+    {"name": "baseline", "purpose": "Reference regression case", "overrides": {}},
+    {"name": "cool_humid_slow_air", "purpose": "Slow drying boundary", "overrides": {"air.temperature_K": 313.15, "air.relative_humidity": 0.5, "air.velocity_m_per_s": 0.5}},
+    {"name": "hot_dry_fast_air", "purpose": "Fast drying boundary", "overrides": {"air.temperature_K": 353.15, "air.relative_humidity": 0.05, "air.velocity_m_per_s": 3.0}},
+    {"name": "large_wet_material", "purpose": "Large diffusion length and high water content", "overrides": {"geometry.length_m": 0.3, "geometry.initial_radius_m": 0.025, "initial.moisture_kg_per_kg_dry": 3.0}},
+    {"name": "small_drier_material", "purpose": "Small geometry and low water content", "overrides": {"geometry.length_m": 0.2, "geometry.initial_radius_m": 0.015, "initial.moisture_kg_per_kg_dry": 1.2}},
+    {"name": "low_moisture_diffusivity", "purpose": "Diffusion-limited drying boundary", "overrides": {"material.moisture_diffusivity_m2_per_s": 1e-10}},
+    {"name": "high_moisture_diffusivity", "purpose": "Rapid internal moisture transport boundary", "overrides": {"material.moisture_diffusivity_m2_per_s": 1e-8}},
+    {"name": "fine_mesh_regression", "purpose": "Mesh-convergence candidate", "overrides": {"numerics.elements_r": 24, "numerics.elements_z": 80, "numerics.initial_dt_s": 5.0}},
+    {"name": "long_duration", "purpose": "Late-time behavior", "overrides": {"numerics.end_time_s": 43200.0, "numerics.output_interval_s": 600.0}},
+    {"name": "prescribed_shrinkage_candidate", "purpose": "Reserved prescribed shrinkage case", "overrides": {"shrinkage.mode": "prescribed", "shrinkage.radial_coefficient": 0.2, "shrinkage.axial_coefficient": 0.05}},
+    {"name": "ale_shrinkage_candidate", "purpose": "Reserved ALE moving-mesh case", "overrides": {"shrinkage.mode": "ale", "shrinkage.radial_coefficient": 0.2, "shrinkage.axial_coefficient": 0.05}}
+  ]
+}

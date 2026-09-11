@@ -1,0 +1,41 @@
+# Local Python environment
+.venv/
+venv/
+env/
+
+# Python caches and tooling
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Packaging and editors
+build/
+dist/
+*.egg-info/
+.idea/
+.vscode/
+*.swp
+
+# pyoomph generated solver artifacts
+_ccode/
+_states/
+_pyoomph_*
+*_numerical_factors.txt
+*.dll
+*.def
+*.pvd
+*.vtu
+*.dump
+
+# Reproducible simulation, validation, and generated-design data
+outputs/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini

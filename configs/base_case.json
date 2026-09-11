@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "case_name": "medicinal_cylinder_baseline",
+  "geometry": {
+    "length_m": 0.25,
+    "initial_radius_m": 0.02,
+    "coordinate_system": "axisymmetric"
+  },
+  "initial": {
+    "temperature_K": 298.15,
+    "moisture_kg_per_kg_dry": 2.0
+  },
+  "air": {
+    "temperature_K": 333.15,
+    "relative_humidity": 0.15,
+    "velocity_m_per_s": 1.5,
+    "pressure_Pa": 101325.0
+  },
+  "material": {
+    "density_dry_kg_per_m3": 650.0,
+    "heat_capacity_J_per_kgK": 2800.0,
+    "thermal_conductivity_W_per_mK": 0.35,
+    "moisture_diffusivity_m2_per_s": 1E-09,
+    "latent_heat_J_per_kg": 2257000.0
+  },
+  "transfer": {
+    "heat_transfer_W_per_m2K": 25.0,
+    "equilibrium_moisture_kg_per_kg_dry": 0.12,
+    "mass_flux_coefficient_kg_per_m2_s_per_moisture": 5E-05,
+    "reference_velocity_m_per_s": 1.5,
+    "reference_relative_humidity": 0.15
+  },
+  "shrinkage": {
+    "mode": "none",
+    "radial_coefficient": 0.0,
+    "axial_coefficient": 0.0,
+    "minimum_radius_fraction": 0.55
+  },
+  "model": {
+    "solve_temperature": true,
+    "solve_moisture": true,
+    "latent_heat_coupling": true,
+    "temperature_dependent_properties": false,
+    "moisture_dependent_properties": false
+  },
+  "numerics": {
+    "elements_r": 12,
+    "elements_z": 40,
+    "element_order": 2,
+    "end_time_s": 21600.0,
+    "initial_dt_s": 10.0,
+    "output_interval_s": 300.0,
+    "adaptive_time_stepping": true,
+    "relative_tolerance": 1E-06,
+    "absolute_tolerance": 1E-08
+  },
+  "output": {
+    "save_fields": [
+      "temperature_K",
+      "moisture_kg_per_kg_dry"
+    ],
+    "save_observables": [
+      "mean_temperature_K",
+      "mean_moisture_kg_per_kg_dry",
+      "radius_m",
+      "mass_loss_kg"
+    ],
+    "formats": [
+      "hdf5",
+      "csv"
+    ],
+    "include_mesh": true
+  }
+}

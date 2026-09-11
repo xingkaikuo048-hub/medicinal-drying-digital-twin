@@ -1,0 +1,9 @@
+--extra-index-url https://download.pytorch.org/whl/cu130
+numpy==2.5.3
+scipy==1.18.1
+pandas==3.0.5
+matplotlib==3.11.1
+openpyxl==3.1.5
+h5py==3.16.0
+pyoomph==0.2.1
+torch==2.14.0+cu130
